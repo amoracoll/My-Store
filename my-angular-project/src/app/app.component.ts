@@ -5,6 +5,8 @@ import { BookListComponent } from './book-list.component';
 import { PostsComponent } from './posts/posts.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { CountriesComponent } from './countries/countries.component';
+import { ZooComponent } from './zoo/zoo.component';
+import { ZooAnimalComponent } from './zoo-animal/zoo-animal.component';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +14,8 @@ import { CountriesComponent } from './countries/countries.component';
     BookListComponent, 
     PostsComponent, 
     RecipeComponent,
-  CountriesComponent],
+    ZooComponent,
+    ZooAnimalComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
