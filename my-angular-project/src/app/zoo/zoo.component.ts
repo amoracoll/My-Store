@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ZooAnimalComponent } from '../zoo-animal/zoo-animal.component';
+import { ZooService } from '../zoo.service';
 
 interface Animal {
   id: number;
@@ -17,25 +18,9 @@ interface Animal {
 export class ZooComponent implements OnInit {
   animalList: Animal[] = [];
 
-  constructor() { }
+  constructor(private animalService: ZooService) { }
 
   ngOnInit(): void {
-    this.animalList = [
-      {
-        id: 1,
-        name: "Panda",
-        fed: true
-      },
-      {
-        id: 2,
-        name: "Elephant",
-        fed: true
-      },
-      {
-        id: 3,
-        name: "Lion",
-        fed: false
-      }
-    ]
+    this.animalList = this.animalService.getAnimals();
   }
 }

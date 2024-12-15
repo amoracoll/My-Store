@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+// Importacion servicio
+import { CountryService } from '../country.service';
+
 interface Country {
   name: string;
   population: number;
@@ -15,22 +18,9 @@ interface Country {
 export class CountriesComponent {
   countryList: Country[] = [];
 
-  constructor() {}
+  constructor(private countryService: CountryService) {}
 
   ngOnInit():void {
-    this.countryList = [
-      {
-        name: "Spain",
-        population: 46754778
-      },
-      {
-        name: "New Zeland",
-        population: 4822233
-      },
-      {
-        name: "United States of America",
-        population: 331002651
-      }
-    ]
+    this.countryList = this.countryService.getCountries();
   }
 }
